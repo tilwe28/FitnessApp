@@ -8,7 +8,7 @@ import android.widget.*;
 public class MainActivity extends AppCompatActivity {
 
     ImageView iv_home, iv_meals, iv_diary, iv_activity, iv_info;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

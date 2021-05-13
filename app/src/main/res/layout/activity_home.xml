@@ -8,55 +8,23 @@
     android:background="#000000"
     tools:context=".Home" >
 
-    <LinearLayout
-        android:id="@+id/id_home_linearLayout"
+    <include
+        android:id="@+id/navigationView"
+        layout="@layout/navigation"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:weightSum="1"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <ImageView
-            android:id="@+id/id_home_image_homeIcon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight=".2"
-            app:srcCompat="@drawable/home"
-            tools:srcCompat="@drawable/home" />
-
-        <ImageView
-            android:id="@+id/id_home_image_mealsIcon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight=".2"
-            app:srcCompat="@drawable/restaurant"
-            tools:srcCompat="@drawable/restaurant" />
-
-        <ImageView
-            android:id="@+id/id_home_image_diaryIcon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight=".2"
-            app:srcCompat="@drawable/cart"
-            tools:srcCompat="@drawable/cart" />
-
-        <ImageView
-            android:id="@+id/id_home_image_exerciseIcon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight=".2"
-            app:srcCompat="@drawable/running"
-            tools:srcCompat="@drawable/running" />
-
-        <ImageView
-            android:id="@+id/id_home_image_infoIcon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight=".2"
-            app:srcCompat="@drawable/user"
-            tools:srcCompat="@drawable/user" />
-
-    </LinearLayout>
+    <TextView
+        android:id="@+id/id_home_textView_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Home"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

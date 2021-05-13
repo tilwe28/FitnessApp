@@ -7,6 +7,15 @@
     android:background="#000000"
     tools:context=".Meals">
 
+    <include
+        android:id="@+id/navigationView"
+        layout="@layout/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/id_meals_textView_heading"
         android:layout_width="wrap_content"

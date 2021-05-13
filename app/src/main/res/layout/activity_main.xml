@@ -5,7 +5,6 @@
     android:id="@+id/id_mainActivity_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< Updated upstream
     android:background="#000000"
     tools:context=".MainActivity" >
 
@@ -60,17 +59,4 @@
             tools:srcCompat="@drawable/user" />
 
     </LinearLayout>
-=======
-    tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
->>>>>>> Stashed changes
 </androidx.constraintlayout.widget.ConstraintLayout>

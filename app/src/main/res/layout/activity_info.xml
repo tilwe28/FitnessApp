@@ -45,9 +45,11 @@
         android:id="@+id/id_info_editText_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:alpha="0.7"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
         android:inputType="textPersonName"
+        android:onClick="clearText"
         android:text="name"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
@@ -75,9 +77,11 @@
         android:id="@+id/id_info_editText_height"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:alpha="0.7"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
         android:inputType="textPersonName"
+        android:onClick="clearText"
         android:text="height"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
@@ -105,9 +109,11 @@
         android:id="@+id/id_info_editText_weight"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:alpha="0.7"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
         android:inputType="textPersonName"
+        android:onClick="clearText"
         android:text="weight"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
@@ -135,9 +141,11 @@
         android:id="@+id/id_info_editText_age"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:alpha="0.7"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
         android:inputType="textPersonName"
+        android:onClick="clearText"
         android:text="age"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
@@ -146,5 +154,53 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/id_info_textView_age"
         app:layout_constraintTop_toTopOf="@+id/id_info_textView_age" />
+
+    <RadioGroup
+        android:id="@+id/id_info_radioGroup_weightGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/navigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/id_info_textView_age"
+        app:layout_constraintTop_toBottomOf="@+id/id_info_textView_age"
+        app:layout_constraintVertical_bias="0.7">
+
+        <RadioButton
+            android:id="@+id/id_info_radioButton_lose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lose"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/id_info_radioButton_gain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gain"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/id_info_radioButton_maintain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Maintain"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Weight Goal"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/id_info_radioGroup_weightGoal"
+        app:layout_constraintEnd_toEndOf="@+id/id_info_radioGroup_weightGoal"
+        app:layout_constraintStart_toStartOf="@+id/id_info_radioGroup_weightGoal"
+        app:layout_constraintTop_toBottomOf="@+id/id_info_textView_age"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

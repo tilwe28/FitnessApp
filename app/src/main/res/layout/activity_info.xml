@@ -39,7 +39,7 @@
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id_info_textView_heading"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintVertical_bias="0.05" />
 
     <EditText
         android:id="@+id/id_info_editText_name"
@@ -71,7 +71,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/id_info_textView_name"
         app:layout_constraintTop_toBottomOf="@+id/id_info_textView_name"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintVertical_bias="0.07" />
 
     <EditText
         android:id="@+id/id_info_editText_height"
@@ -80,7 +80,7 @@
         android:alpha="0.7"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="numberDecimal"
         android:onClick="clearText"
         android:text="height"
         android:textColor="#FFFFFF"
@@ -103,7 +103,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/id_info_textView_height"
         app:layout_constraintTop_toBottomOf="@+id/id_info_textView_height"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintVertical_bias="0.07" />
 
     <EditText
         android:id="@+id/id_info_editText_weight"
@@ -112,7 +112,7 @@
         android:alpha="0.7"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="numberDecimal"
         android:onClick="clearText"
         android:text="weight"
         android:textColor="#FFFFFF"
@@ -135,7 +135,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/id_info_textView_weight"
         app:layout_constraintTop_toBottomOf="@+id/id_info_textView_weight"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintVertical_bias="0.07" />
 
     <EditText
         android:id="@+id/id_info_editText_age"
@@ -155,52 +155,140 @@
         app:layout_constraintStart_toEndOf="@+id/id_info_textView_age"
         app:layout_constraintTop_toTopOf="@+id/id_info_textView_age" />
 
-    <RadioGroup
-        android:id="@+id/id_info_radioGroup_weightGoal"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/id_info_linearLayout_radioGroups"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum=".3"
         app:layout_constraintBottom_toTopOf="@+id/navigationView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/id_info_textView_age"
-        app:layout_constraintTop_toBottomOf="@+id/id_info_textView_age"
-        app:layout_constraintVertical_bias="0.7">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_info_editText_age"
+        app:layout_constraintVertical_bias="0.25">
 
-        <RadioButton
-            android:id="@+id/id_info_radioButton_lose"
-            android:layout_width="match_parent"
+        <RadioGroup
+            android:id="@+id/id_info_radioGroup_gender"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lose"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp" />
+            android:layout_weight=".1">
 
-        <RadioButton
-            android:id="@+id/id_info_radioButton_gain"
-            android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/id_info_textView_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Gender"
+                android:textColor="#FFFFFF"
+                android:textSize="26sp" />
+
+            <RadioButton
+                android:id="@+id/id_info_radioButton_male"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Male"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/id_info_radioButton_female"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Female"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/id_info_radioGroup_weightGoal"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Gain"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp" />
+            android:layout_weight=".1">
 
-        <RadioButton
-            android:id="@+id/id_info_radioButton_maintain"
-            android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/id_info_textView_weightGoal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Weight Goal"
+                android:textColor="#FFFFFF"
+                android:textSize="26sp" />
+
+            <RadioButton
+                android:id="@+id/id_info_radioButton_lose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lose"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/id_info_radioButton_gain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gain"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/id_info_radioButton_maintain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Maintain"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/id_info_radioGroup_activeness"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Maintain"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp" />
-    </RadioGroup>
+            android:layout_weight=".1">
 
-    <TextView
-        android:id="@+id/textView"
+            <TextView
+                android:id="@+id/id_info_textView_activeness"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Activeness"
+                android:textColor="#FFFFFF"
+                android:textSize="26sp" />
+
+            <RadioButton
+                android:id="@+id/id_info_radioButton_low"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Low"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/id_info_radioButton_average"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Average"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/id_info_radioButton_high"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="High"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/id_info_button_calculate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Weight Goal"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/id_info_radioGroup_weightGoal"
-        app:layout_constraintEnd_toEndOf="@+id/id_info_radioGroup_weightGoal"
-        app:layout_constraintStart_toStartOf="@+id/id_info_radioGroup_weightGoal"
-        app:layout_constraintTop_toBottomOf="@+id/id_info_textView_age"
-        app:layout_constraintVertical_bias="1.0" />
+        android:backgroundTint="#800080"
+        android:text="Calculate calories"
+        app:layout_constraintBottom_toTopOf="@+id/navigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_info_linearLayout_radioGroups" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

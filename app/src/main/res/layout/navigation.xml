@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/id_navigation_linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#000000"
+    android:orientation="horizontal"
+    android:weightSum="1">
+
+    <ImageView
+        android:id="@+id/id_navigation_image_homeIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight=".2"
+        app:srcCompat="@drawable/home"
+        tools:srcCompat="@drawable/home" />
+
+    <ImageView
+        android:id="@+id/id_navigation_image_mealsIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight=".2"
+        app:srcCompat="@drawable/restaurant"
+        tools:srcCompat="@drawable/restaurant" />
+
+    <ImageView
+        android:id="@+id/id_navigation_image_diaryIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight=".2"
+        app:srcCompat="@drawable/cart"
+        tools:srcCompat="@drawable/cart" />
+
+    <ImageView
+        android:id="@+id/id_navigation_image_exerciseIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight=".2"
+        app:srcCompat="@drawable/running"
+        tools:srcCompat="@drawable/running" />
+
+    <ImageView
+        android:id="@+id/id_navigation_image_infoIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight=".2"
+        app:srcCompat="@drawable/user"
+        tools:srcCompat="@drawable/user" />
+</LinearLayout>

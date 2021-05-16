@@ -22,11 +22,8 @@ public class Info extends AppCompatActivity {
     Button b_calculate;
 
     //attributes
-    String name="";
-    double height=0.0, weight=0.0, calories=0.0;
-    int age=0, gender=0, goal=0, activeness=0;//gender 0=male 1=female,goal -1=lose 0=maintain 1=gain, activeness -1=low 0=average 1=high
-
-    Context cont = this;
+    double calories;
+    int gender=0, goal=0, activeness=0;//gender 0=male 1=female,goal -1=lose 0=maintain 1=gain, activeness -1=low 0=average 1=high
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +40,9 @@ public class Info extends AppCompatActivity {
         iv_homeIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentHomeActivity = new Intent(Info.this, Home.class);
-                startActivity(intentHomeActivity);
+                //Intent intentHomeActivity = new Intent(Info.this, Home.class);
+                //startActivity(intentHomeActivity);
+                finish();
             }
         });
         iv_mealsIcon.setOnClickListener(new View.OnClickListener() {
@@ -110,12 +108,12 @@ public class Info extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                name = s.toString();
+                Data.setName(s.toString());
             }
 
             @Override
             public void afterTextChanged(Editable s) {
-                name.toString();
+                Data.setName(s.toString());
             }
         });
         et_height.addTextChangedListener(new TextWatcher() {
@@ -132,7 +130,7 @@ public class Info extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 try {
-                    height = Double.parseDouble(s.toString());
+                    Data.setHeight(Double.parseDouble(s.toString()));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -152,7 +150,7 @@ public class Info extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 try {
-                    weight = Double.parseDouble(s.toString());
+                    Data.setWeight(Double.parseDouble(s.toString()));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -172,7 +170,7 @@ public class Info extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 try {
-                    age = Integer.parseInt(s.toString());
+                    Data.setAge(Integer.parseInt(s.toString()));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -212,9 +210,9 @@ public class Info extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (gender==0)
-                    calories = 88.362 + (13.397*weight*.453592) + (4.799*height*2.54) - (5.677*age);
+                    calories = 88.362 + (13.397*Data.getWeight()*.453592) + (4.799*Data.getHeight()*2.54) - (5.677*Data.getAge());
                 else
-                    calories = 447.593 + (9.247*weight*.453592) + (3.098*height*2.54) - (4.33*age);
+                    calories = 447.593 + (9.247*Data.getWeight()*.453592) + (3.098*Data.getHeight()*2.54) - (4.33*Data.getAge());
 
                 if (activeness==-1)
                     calories *= 1.2;
@@ -226,6 +224,8 @@ public class Info extends AppCompatActivity {
                     calories -= 200;
                 else if (goal==1)
                     calories += 200;
+                Data.setCalories(calories);
+                Toast.makeText(Info.this, "Suggested Calories: " + Data.getCalories(), Toast.LENGTH_SHORT);
             }
         });
     }

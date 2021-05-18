@@ -1,16 +1,18 @@
 package com.example.fitnessapp;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.*;
 
 public class Home extends AppCompatActivity {
 
     ImageView iv_homeIcon, iv_mealsIcon, iv_diaryIcon, iv_exerciseIcon, iv_infoIcon;
-    TextView tv_heading;
+    TextView tv_heading, tv_name, tv_totalCalories;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,5 +61,16 @@ public class Home extends AppCompatActivity {
         });
 
         tv_heading = findViewById(R.id.id_home_textView_heading);
+        tv_name = findViewById(R.id.id_home_textView_name);
+        tv_totalCalories = findViewById(R.id.id_home_textView_totalCalories);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Log.d("TAG", "onActivityResult");
+
+        tv_name.setText("Hi " + Data.getName().substring(0, Data.getName().indexOf(" ")) + "!");
+        tv_totalCalories.setText("" + (int)Data.getCalories());
     }
 }

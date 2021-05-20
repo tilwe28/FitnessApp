@@ -176,13 +176,10 @@ public class Info extends AppCompatActivity {
                 }
             }
         });
-        rg_gender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == rb_male.getId())
-                    gender = 0;
-                else gender = 1;
-            }
+        rg_gender.setOnCheckedChangeListener((group, checkedId) -> {
+            if (checkedId == rb_male.getId())
+                gender = 0;
+            else gender = 1;
         });
         rg_weightGoal.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override

@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Calories consumed"
+        android:text="Input"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/id_diary_textView_heading"
@@ -44,11 +44,11 @@
 
     <EditText
         android:id="@+id/calculated_calories"
-        android:layout_width="364dp"
-        android:layout_height="88dp"
+        android:layout_width="292dp"
+        android:layout_height="69dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Calculate "
+        android:text="Food "
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/navigationView"
         app:layout_constraintEnd_toEndOf="@+id/id_diary_textView_heading"
@@ -59,26 +59,26 @@
 
     <TextView
         android:id="@+id/calories_eaten"
-        android:layout_width="134dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="36dp"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="28dp"
         android:text="Calories Eaten:"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calculated_calories"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintVertical_bias="0.542" />
 
     <TextView
         android:id="@+id/calories_left"
-        android:layout_width="127dp"
-        android:layout_height="43dp"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
         android:layout_marginStart="69dp"
         android:text="Calories Left:"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/calculated_calories"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.84"
         app:layout_constraintStart_toEndOf="@+id/calories_eaten"
         app:layout_constraintTop_toTopOf="@+id/calories_eaten"
         app:layout_constraintVertical_bias="0.0" />
@@ -90,8 +90,33 @@
         android:text="Calculate"
         app:layout_constraintBottom_toBottomOf="@+id/calories_eaten"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.582"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calculated_calories"
-        app:layout_constraintVertical_bias="0.287" />
+        app:layout_constraintVertical_bias="0.453" />
+
+    <EditText
+        android:id="@+id/calculate_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Amount"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/calculated_calories"
+        app:layout_constraintTop_toBottomOf="@+id/calculated_calories"
+        app:layout_constraintVertical_bias="0.078" />
+
+    <Button
+        android:id="@+id/diary_instruction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="instructions"
+        app:layout_constraintEnd_toStartOf="@+id/id_diary_textView_heading"
+        app:layout_constraintHorizontal_bias="0.222"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/id_diary_textView_heading" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -222,7 +222,7 @@ public class Info extends AppCompatActivity {
                 else if (goal==1)
                     calories += 200;
                 Data.setCalories(calories);
-                Toast.makeText(Info.this, "Suggested Calories: " + Data.getCalories(), Toast.LENGTH_SHORT);
+                Toast.makeText(Info.this, "Suggested Calories: " + (double)(Math.round(Data.getCalories()*10.0)/10.0), Toast.LENGTH_SHORT).show();
             }
         });
     }

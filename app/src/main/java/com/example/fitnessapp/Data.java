@@ -15,7 +15,7 @@ public class Data {
     public static double getWeight() {
         return weight;
     }
-    public static double getCalories() {
+    public static double getCalories() { //total
         return calories;
     }
     public static double getCurrentCalories() {
@@ -37,8 +37,8 @@ public class Data {
     public static void setCalories(double newCalories) {
         calories = newCalories;
     }
-    public static void setCurrentCalories(double addCalories) {
-        currentCalories = addCalories;
+    public static void addCurrentCalories(double addCalories) {
+        currentCalories += addCalories;
     }
     public static void setAge(int newAge) {
         age = newAge;

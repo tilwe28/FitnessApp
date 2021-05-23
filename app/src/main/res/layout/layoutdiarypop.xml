@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/instruction">
+
+    <TextView
+        android:id="@+id/Dia"
+        android:layout_width="262dp"
+        android:layout_height="57dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="How to Use Diary"
+        android:fontFamily="@font/aclonica"
+        android:textColor="#000000"
+        android:textColorHint="#070707"
+        android:textStyle="bold"
+        android:textSize="21sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.09" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="215dp"
+        android:layout_height="70dp"
+        android:fontFamily="@font/aclonica"
+        android:gravity="left"
+        android:text="Manually input the calories you ate or enter the food and amount and FitApp will calculate for you!"
+        android:textColor="#000000"
+        android:textColorHint="#070707"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.296" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="215dp"
+        android:layout_height="80dp"
+        android:fontFamily="@font/aclonica"
+        android:text="If your dish is unique, input the ingridients and servings individually"
+        android:textColor="#000000"
+        android:textColorHint="#070707"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.513" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="215dp"
+        android:layout_height="70dp"
+        android:fontFamily="@font/aclonica"
+        android:text="You do not need to input any units (ex: oz, cups, etc.) for your food, FitApp will recognize the units from the food you input!"
+        android:textColor="#000000"
+        android:textColorHint="#070707"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.724" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="215dp"
+        android:layout_height="65dp"
+        android:fontFamily="@font/aclonica"
+        android:text="Remember to update your calories after each meal!"
+        android:textColor="#000000"
+        android:textColorHint="#070707"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.929" />
+</androidx.constraintlayout.widget.ConstraintLayout>

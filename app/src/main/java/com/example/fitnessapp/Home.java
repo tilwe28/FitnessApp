@@ -70,7 +70,7 @@ public class Home extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         Log.d("TAG", "onActivityResult");
 
-        tv_name.setText("Hi " + Data.getName().substring(0, Data.getName().indexOf(" ")) + "!");
+        tv_name.setText("Hi " + Data.getName() + "!");
         tv_totalCalories.setText("" + (int)Data.getCalories());
     }
 }

@@ -27,8 +27,9 @@ public class Exercise extends AppCompatActivity {
         iv_homeIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentHomeActivity = new Intent(Exercise.this, Home.class);
-                startActivity(intentHomeActivity);
+                //Intent intentHomeActivity = new Intent(Exercise.this, Home.class);
+                //startActivity(intentHomeActivity);
+                finish();
             }
         });
         iv_mealsIcon.setOnClickListener(new View.OnClickListener() {

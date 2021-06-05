@@ -20,10 +20,67 @@
         android:id="@+id/id_meals_textView_heading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Meals"
+        android:text="Can I Eat It?"
         android:textColor="#FFFFFF"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/id_meals_editText_input"
+        android:layout_width="272dp"
+        android:layout_height="61dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="Input"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/navigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_meals_textView_heading"
+        app:layout_constraintVertical_bias="0.175" />
+
+    <Button
+        android:id="@+id/id_meals_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CHECK"
+        app:layout_constraintBottom_toTopOf="@+id/navigationView"
+        app:layout_constraintEnd_toEndOf="@+id/id_meals_editText_input"
+        app:layout_constraintStart_toStartOf="@+id/id_meals_editText_input"
+        app:layout_constraintTop_toBottomOf="@+id/id_meals_editText_input"
+        app:layout_constraintVertical_bias="0.266" />
+
+    <TextView
+        android:id="@+id/id_meals_approve"
+        android:layout_width="191dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="112dp"
+        android:text="Yes or No"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_meals_check" />
+
+    <EditText
+        android:id="@+id/meals_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="Amount"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/id_meals_check"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_meals_editText_input"
+        app:layout_constraintVertical_bias="0.742" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

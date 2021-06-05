@@ -136,7 +136,6 @@ public class Diary extends AppCompatActivity {
                 //motivation toast
                 DateFormat df = new SimpleDateFormat("h a");
                 String time = df.format(Calendar.getInstance().getTime());
-                Toast.makeText(Diary.this,time,Toast.LENGTH_SHORT).show();
                 Log.d("TIME",time);
                 Boolean early = true;
                 if(time.length() ==5)

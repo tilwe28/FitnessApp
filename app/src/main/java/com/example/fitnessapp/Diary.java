@@ -54,13 +54,14 @@ public class Diary extends AppCompatActivity {
         instruction = findViewById(R.id.diary_instruction);
         tv_heading = findViewById(R.id.id_diary_textView_heading);
 
+        calories_Left.setText(""+ (Data.getCalories()-Data.getCalories()));
+
         instruction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Diary.this, DiaryInstructions.class));
             }
         });
-
 
         iv_homeIcon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +97,7 @@ public class Diary extends AppCompatActivity {
                 startActivityForResult(intentInfoActivity, 1);
             }
         });
+
         calc_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

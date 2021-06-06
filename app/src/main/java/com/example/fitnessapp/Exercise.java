@@ -4,14 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.*;
 
 public class Exercise extends AppCompatActivity {
 
     ImageView iv_homeIcon, iv_mealsIcon, iv_diaryIcon, iv_exerciseIcon, iv_infoIcon;
-    TextView tv_heading;
+    TextView tv_heading, tv_manualInput;
+    EditText et_manualInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,5 +63,34 @@ public class Exercise extends AppCompatActivity {
         });
 
         tv_heading = findViewById(R.id.id_exercise_textView_heading);
+        tv_manualInput = findViewById(R.id.id_exercise_textView_manualInput);
+        et_manualInput = findViewById(R.id.id_exercise_editText_manualInput);
+
+        et_manualInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                try {
+                    Data.addCaloriesBurned(Integer.parseInt(s.toString()));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+    }
+
+    public void clearText(View v) {
+        EditText et = findViewById(v.getId());
+        et.setText("");
     }
 }

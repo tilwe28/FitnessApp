@@ -2,6 +2,7 @@ package com.example.fitnessapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -117,15 +118,15 @@ public class Diary extends AppCompatActivity {
                     double cal_manual = Double.valueOf(manual_calories.getText().toString());
                     Data.addCurrentCalories(cal_manual);
                     calories_Eaten.setText(String.valueOf(Data.getCurrentCalories()));
-                    if(( Data.getCalories() - Data.getCurrentCalories())>0) {
-                        double rounded_cal = Data.getCalories() - Data.getCurrentCalories();
-                        rounded_cal = (double)(Math.round(rounded_cal*10.0) / 10.0) ;
-                        calories_Left.setText(String.valueOf(rounded_cal));
-                    }
-                    else {
-                        calories_Left.setText("0");
-                        Toast.makeText(Diary.this, "All done eating!",Toast.LENGTH_SHORT).show();
-                    }
+                        if(( Data.getCalories() - Data.getCurrentCalories())>0) {
+                            double rounded_cal = Data.getCalories() - Data.getCurrentCalories();
+                            rounded_cal = (double)(Math.round(rounded_cal*10.0) / 10.0) ;
+                            calories_Left.setText(String.valueOf(rounded_cal));
+                        }
+                        else {
+                            calories_Left.setText("0");
+                            Toast.makeText(Diary.this, "All done eating!",Toast.LENGTH_SHORT).show();
+                        }
                 }
                 else if(!manual_calories.getText().toString().equals("Input") && !api_calories.getText().toString().equals("Food")){ //when user uses both manual input and api input
                     double cal_manual = Double.valueOf(manual_calories.getText().toString());
@@ -184,9 +185,12 @@ public class Diary extends AppCompatActivity {
                 }
                 NotificationCompat.Builder builder= new NotificationCompat.Builder(Diary.this,"Cals Left");
                 builder.setContentTitle("CALS LEFT");
-                builder.setContentText("REMINDER: YOU HAVE "+ c + " CALORIES LEFT");
+                builder.setContentText("REMINDER: YOU HAVE "+ (double)(Math.round(c*10.0) / 10.0) + " CALORIES LEFT");
                 builder.setSmallIcon(R.drawable.restaurant);
                 builder.setAutoCancel(true);
+
+                NotificationManagerCompat managerCompat = NotificationManagerCompat.from(Diary.this);
+                managerCompat.notify(1,builder.build());
             }
         });
 

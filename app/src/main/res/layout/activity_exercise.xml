@@ -20,6 +20,7 @@
         android:id="@+id/id_exercise_textView_heading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/aclonica"
         android:text="Exercise"
         android:textColor="#FFFFFF"
         android:textSize="36sp"
@@ -29,8 +30,8 @@
 
     <TextView
         android:id="@+id/id_exercise_textView_manualInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="180dp"
+        android:layout_height="55dp"
         android:text="Calories Burned:"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
@@ -39,7 +40,7 @@
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id_exercise_textView_heading"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintVertical_bias="0.061" />
 
     <EditText
         android:id="@+id/id_exercise_editText_manualInput"
@@ -61,20 +62,21 @@
 
     <TextView
         android:id="@+id/id_exercise_textView_activity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="142dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="4dp"
         android:text="Activity Type:"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/navigationView"
         app:layout_constraintStart_toStartOf="@+id/id_exercise_textView_manualInput"
         app:layout_constraintTop_toBottomOf="@+id/id_exercise_textView_manualInput"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintVertical_bias="0.109" />
 
     <EditText
         android:id="@+id/id_exercise_editText_activity"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="225dp"
+        android:layout_height="56dp"
         android:alpha="0.7"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
@@ -84,27 +86,29 @@
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/id_exercise_textView_activity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/id_exercise_textView_activity"
-        app:layout_constraintTop_toTopOf="@+id/id_exercise_textView_activity" />
+        app:layout_constraintBottom_toBottomOf="@+id/id_exercise_editText_manualInput"
+        app:layout_constraintStart_toEndOf="@+id/id_exercise_textView_manualInput"
+        app:layout_constraintTop_toTopOf="@+id/id_exercise_textView_activity"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/id_exercise_textView_distance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="118dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="4dp"
         android:text="Distance:"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/navigationView"
         app:layout_constraintStart_toStartOf="@+id/id_exercise_textView_activity"
-        app:layout_constraintTop_toBottomOf="@+id/id_exercise_textView_activity"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
 
     <EditText
         android:id="@+id/id_exercise_editText_distance"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="220dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="4dp"
         android:alpha="0.7"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
@@ -114,9 +118,9 @@
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/id_exercise_textView_distance"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/id_exercise_textView_distance"
-        app:layout_constraintTop_toTopOf="@+id/id_exercise_textView_distance" />
+        app:layout_constraintBottom_toBottomOf="@+id/id_exercise_editText_activity"
+        app:layout_constraintStart_toStartOf="@+id/id_exercise_editText_activity"
+        app:layout_constraintTop_toTopOf="@+id/id_exercise_textView_distance"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

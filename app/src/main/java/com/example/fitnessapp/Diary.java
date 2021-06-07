@@ -1,9 +1,13 @@
 package com.example.fitnessapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -97,27 +101,15 @@ public class Diary extends AppCompatActivity {
                 startActivityForResult(intentInfoActivity, 1);
             }
         });
-
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            NotificationChannel channel = new NotificationChannel("Cals Left", "Cals left", NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+        }
         calc_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(manual_calories.getText().toString().equals("Input") && !api_calories.getText().toString().equals("Food")) { //or whatever manual calories text is set to
-                    DownloadFilesTask downloadFilesTask = new DownloadFilesTask();
-                    downloadFilesTask.execute();
-                }
-                else if(!manual_calories.getText().toString().equals("Input") && !api_calories.getText().toString().equals("Food")){ //when user uses both manual input and api input
-                    double cal_manual = Double.valueOf(manual_calories.getText().toString());
-                    Data.addCurrentCalories(cal_manual);
-                    if(( Data.getCalories() - Data.getCurrentCalories())>0) {
-                        double rounded_cal = Data.getCalories() - Data.getCurrentCalories();
-                        rounded_cal = (double)(Math.round(rounded_cal*10.0) / 10.0) ;
-                        calories_Left.setText(String.valueOf(rounded_cal));
-                    }
-                    else {
-                        calories_Left.setText("0");
-                        Toast.makeText(Diary.this, "All done eating!",Toast.LENGTH_SHORT).show();
-                    }
-                    calories_Eaten.setText(String.valueOf(Data.getCurrentCalories()));
                     DownloadFilesTask downloadFilesTask = new DownloadFilesTask();
                     downloadFilesTask.execute();
                 }
@@ -134,6 +126,22 @@ public class Diary extends AppCompatActivity {
                         calories_Left.setText("0");
                         Toast.makeText(Diary.this, "All done eating!",Toast.LENGTH_SHORT).show();
                     }
+                }
+                else if(!manual_calories.getText().toString().equals("Input") && !api_calories.getText().toString().equals("Food")){ //when user uses both manual input and api input
+                    double cal_manual = Double.valueOf(manual_calories.getText().toString());
+                    Data.addCurrentCalories(cal_manual);
+                    if(( Data.getCalories() - Data.getCurrentCalories())>0) {
+                        double rounded_cal = Data.getCalories() - Data.getCurrentCalories();
+                        rounded_cal = (double)(Math.round(rounded_cal*10.0) / 10.0) ;
+                        calories_Left.setText(String.valueOf(rounded_cal));
+                    }
+                    else {
+                        calories_Left.setText("0");
+                        Toast.makeText(Diary.this, "All done eating!",Toast.LENGTH_SHORT).show();
+                    }
+                    calories_Eaten.setText(String.valueOf(Data.getCurrentCalories()));
+                    DownloadFilesTask downloadFilesTask = new DownloadFilesTask();
+                    downloadFilesTask.execute();
                 }
                 //motivation toast
                 DateFormat df = new SimpleDateFormat("h a");
@@ -174,6 +182,11 @@ public class Diary extends AppCompatActivity {
                             Toast.makeText(Diary.this, "Great!", Toast.LENGTH_SHORT).show();
                     }
                 }
+                NotificationCompat.Builder builder= new NotificationCompat.Builder(Diary.this,"Cals Left");
+                builder.setContentTitle("CALS LEFT");
+                builder.setContentText("REMINDER: YOU HAVE "+ c + " CALORIES LEFT");
+                builder.setSmallIcon(R.drawable.restaurant);
+                builder.setAutoCancel(true);
             }
         });
 

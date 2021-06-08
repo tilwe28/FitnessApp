@@ -130,4 +130,16 @@
         app:layout_constraintTop_toBottomOf="@+id/id_exercise_textView_distance"
         app:layout_constraintVertical_bias="0.25" />
 
+    <TextView
+        android:id="@+id/id_exercise_textView_caloriesBurned"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calories Burned:"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/navigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_exercise_button_calculate" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

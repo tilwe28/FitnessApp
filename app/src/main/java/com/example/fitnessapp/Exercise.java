@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.*;
 
 import org.jetbrains.annotations.NotNull;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 
@@ -28,7 +30,7 @@ import okhttp3.Response;
 public class Exercise extends AppCompatActivity {
 
     ImageView iv_homeIcon, iv_mealsIcon, iv_diaryIcon, iv_exerciseIcon, iv_infoIcon;
-    TextView tv_heading, tv_manualInput, tv_activity, tv_distance;
+    TextView tv_heading, tv_manualInput, tv_activity, tv_distance, tv_calories;
     EditText et_manualInput, et_activity, et_distance;
     Button b_calculate;
 
@@ -87,6 +89,7 @@ public class Exercise extends AppCompatActivity {
         tv_manualInput = findViewById(R.id.id_exercise_textView_manualInput);
         tv_activity = findViewById(R.id.id_exercise_textView_activity);
         tv_distance = findViewById(R.id.id_exercise_textView_distance);
+        tv_calories = findViewById(R.id.id_exercise_textView_caloriesBurned);
         et_activity = findViewById(R.id.id_exercise_editText_activity);
         et_distance = findViewById(R.id.id_exercise_editText_distance);
         et_manualInput = findViewById(R.id.id_exercise_editText_manualInput);
@@ -152,6 +155,13 @@ public class Exercise extends AppCompatActivity {
                             @Override
                             public void run() {
                                 Log.d("TAG", "Updating textviews:" + responseData);
+                                try {
+                                    double caloriesBurned = new JSONObject(responseData).getJSONArray("exercises").getJSONObject(0).getDouble("nf_calories");
+                                    Data.addCaloriesBurned(caloriesBurned);
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                                tv_calories.setText("Calories Burned: " + Data.getCaloriesBurned());
                             }
                         });
                     }
